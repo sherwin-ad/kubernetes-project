@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ping-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: ping
+        image: busybox
+        command: ["sh", "-c", "ping -c 10 google.com && echo 'Ping successful'"]
+      restartPolicy: Never

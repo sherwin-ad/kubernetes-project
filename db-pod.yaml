@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: database-pod
+  labels:
+    app: postgres
+    tier: backend
+    environment: development
+spec:
+  containers:
+    - name: postgres-container
+      image: postgres
