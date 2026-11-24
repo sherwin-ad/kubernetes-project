@@ -10,3 +10,8 @@ spec:
   containers:
     - name: postgres-container
       image: postgres
+      env:
+        - name: POSTGRES_PASSWORD
+          value: "mysecretpassword"
+      ports:
+        - containerPort: 5432
