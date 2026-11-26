@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-full-toleration
+
+spec:
+  nodeSelector:
+    role: web
+
+  tolerations:
+  - key: app
+    operator: Equal
+    value: web
+    effect: NoSchedule
+
+  - key: environment
+    operator: Equal
+    value: test
+    effect: NoExecute
+
+  containers:
+  - name: nginx
+    image: nginx

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: backend
+spec:
+  nodeSelector:
+    role: database
+
+  containers:
+  - name: backend
+    image: nginx

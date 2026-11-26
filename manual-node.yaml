@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: manual-nginx-2
+spec:
+  nodeName: minikube
+  containers:
+  - name: nginx
+    image: nginx

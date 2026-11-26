@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-with-toleration
+spec:
+  nodeSelector:
+    role: web
+
+  tolerations:
+  - key: app
+    operator: Equal
+    value: web
+    effect: NoSchedule
+
+  containers:
+  - name: nginx
+    image: nginx
